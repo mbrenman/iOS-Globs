@@ -11,6 +11,8 @@
 
 @interface ViewController ()
 
+@property (nonatomic, strong) GlobsGame *game;
+
 @end
 
 @implementation ViewController
@@ -19,17 +21,21 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    GlobsGame *game = [[GlobsGame  alloc] initWith:6 and:5];
-    [game print];
-    for (int i = 0; i < 10; i++){
-        int move = arc4random() % 5;
-        NSLog(@"Playing: %d", move);
-        if ([game performMoveWith:move]) {
-            NSLog(@"Yayyyyyyyyyy");
-        }
-        [game print];
+    
+    //TODO: Get these parameters from preferences
+    if (!self.game){
+        self.game = [[GlobsGame  alloc] initWith:6 and:5];
     }
-    [game endGame];
+
+    //Initialize the game
+    [self.GameBoard setBoard:[self.game board]];
+    [self.GameBoard setLength:[self.game length]];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    //Cleaning up dynamic memory of the gameboard
+    [self.game endGame];
 }
 
 - (void)didReceiveMemoryWarning

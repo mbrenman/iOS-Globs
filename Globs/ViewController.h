@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GameBoardView.h"
 
 @interface ViewController : UIViewController
+
+@property (strong, nonatomic) IBOutlet GameBoardView *GameBoard;
 
 @end

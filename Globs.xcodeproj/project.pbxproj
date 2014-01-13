@@ -22,6 +22,7 @@
 		AA5DA7731880C74E0068541B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA5DA7711880C74E0068541B /* InfoPlist.strings */; };
 		AA5DA7751880C74E0068541B /* GlobsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5DA7741880C74E0068541B /* GlobsTests.m */; };
 		AA5DA7801880C99C0068541B /* GlobsGame.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5DA77F1880C99C0068541B /* GlobsGame.m */; };
+		AA5DA789188209830068541B /* GameBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5DA788188209830068541B /* GameBoardView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		AA5DA7741880C74E0068541B /* GlobsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlobsTests.m; sourceTree = "<group>"; };
 		AA5DA77E1880C99C0068541B /* GlobsGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobsGame.h; sourceTree = "<group>"; };
 		AA5DA77F1880C99C0068541B /* GlobsGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobsGame.m; sourceTree = "<group>"; };
+		AA5DA787188209830068541B /* GameBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameBoardView.h; sourceTree = "<group>"; };
+		AA5DA788188209830068541B /* GameBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameBoardView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,8 @@
 				AA5DA75B1880C74E0068541B /* Main.storyboard */,
 				AA5DA75E1880C74E0068541B /* ViewController.h */,
 				AA5DA75F1880C74E0068541B /* ViewController.m */,
+				AA5DA787188209830068541B /* GameBoardView.h */,
+				AA5DA788188209830068541B /* GameBoardView.m */,
 				AA5DA7611880C74E0068541B /* Images.xcassets */,
 				AA5DA7501880C74E0068541B /* Supporting Files */,
 			);
@@ -258,6 +263,7 @@
 				AA5DA75A1880C74E0068541B /* AppDelegate.m in Sources */,
 				AA5DA7561880C74E0068541B /* main.m in Sources */,
 				AA5DA7801880C99C0068541B /* GlobsGame.m in Sources */,
+				AA5DA789188209830068541B /* GameBoardView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
