@@ -26,10 +26,11 @@
     if (!self.game){
         self.game = [[GlobsGame  alloc] initWith:6 and:5];
     }
-
+    [self.game print];
     //Initialize the game
     [self.GameBoard setBoard:[self.game board]];
     [self.GameBoard setLength:[self.game length]];
+    [self.GameBoard setNumColors:[self.game numColors]];
 }
 
 - (void)viewWillDisappear:(BOOL)animated

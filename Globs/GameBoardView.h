@@ -12,5 +12,6 @@
 
 @property (nonatomic) int *board;
 @property (nonatomic) int length;
+@property (nonatomic) int numColors;
 
 @end

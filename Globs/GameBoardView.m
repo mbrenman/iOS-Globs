@@ -39,7 +39,7 @@
 {
     if (self.board){
         
-        self.blockSideLength = ([self bounds].size.width)/((CGFloat)self.length - 1);
+        self.blockSideLength = ([self bounds].size.width)/((CGFloat)self.length);
         
         CGContextRef context = UIGraphicsGetCurrentContext();
         CGContextSetLineWidth(context, 4.0);
@@ -47,8 +47,15 @@
         
         for (int y = 0; y < self.length; y++){
             for (int x = 0; x < self.length; x++){
-                CGRect rectangle = CGRectMake(0,0,self.blockSideLength * x,self.blockSideLength * y);
+                int idex = [self calculateIndexOf:y and: x];
+                UIColor *color = [self calculateColorWithNumber:self.board[idex]];
+                
+                CGContextSetStrokeColorWithColor(context, color.CGColor);
+                
+                CGRect rectangle = CGRectMake(self.blockSideLength * x,self.blockSideLength * y, self.blockSideLength, self.blockSideLength);
+                
                 CGContextAddRect(context, rectangle);
+                
                 CGContextStrokePath(context);
             }
         }
@@ -58,5 +65,20 @@
     }
 }
 
+-(UIColor *)calculateColorWithNumber: (int)num
+{
+    CGFloat red = ((255.0f/(CGFloat)self.numColors)*(CGFloat)num)/255.0f;
+    UIColor *color = [UIColor colorWithRed:red green:0.5f blue:0.5f alpha:1];
+    return color;
+}
+
+- (int)calculateIndexOf:(int)row and:(int)col
+{
+    int index = col + (row * [self length]);
+    
+    //Check bounds?
+    
+    return index;
+}
 
 @end
