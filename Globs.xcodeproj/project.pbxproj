@@ -209,6 +209,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = mbrenman;
 				TargetAttributes = {
+					AA5DA7451880C74E0068541B = {
+						DevelopmentTeam = WC8GK6LE4R;
+					};
 					AA5DA7661880C74E0068541B = {
 						TestTargetID = AA5DA7451880C74E0068541B;
 					};
@@ -390,10 +393,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Globs/Globs-Prefix.pch";
 				INFOPLIST_FILE = "Globs/Globs-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -403,10 +409,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Globs/Globs-Prefix.pch";
 				INFOPLIST_FILE = "Globs/Globs-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -472,6 +481,7 @@
 				AA5DA77A1880C74E0068541B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AA5DA77B1880C74E0068541B /* Build configuration list for PBXNativeTarget "GlobsTests" */ = {
 			isa = XCConfigurationList;
@@ -480,6 +490,7 @@
 				AA5DA77D1880C74E0068541B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

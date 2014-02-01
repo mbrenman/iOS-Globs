@@ -47,16 +47,20 @@
         
         for (int y = 0; y < self.length; y++){
             for (int x = 0; x < self.length; x++){
+                
                 int idex = [self calculateIndexOf:y and: x];
+                
                 UIColor *color = [self calculateColorWithNumber:self.board[idex]];
-                
                 CGContextSetStrokeColorWithColor(context, color.CGColor);
+                CGContextSetFillColorWithColor(context, color.CGColor);
                 
-                CGRect rectangle = CGRectMake(self.blockSideLength * x,self.blockSideLength * y, self.blockSideLength, self.blockSideLength);
-                
+                CGRect rectangle = CGRectMake(self.blockSideLength * x,
+                                              self.blockSideLength * y,
+                                              self.blockSideLength,
+                                              self.blockSideLength);
                 CGContextAddRect(context, rectangle);
-                
                 CGContextStrokePath(context);
+                UIRectFill(rectangle);
             }
         }
         
