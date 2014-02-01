@@ -42,8 +42,7 @@
         self.blockSideLength = ([self bounds].size.width)/((CGFloat)self.length);
         
         CGContextRef context = UIGraphicsGetCurrentContext();
-        CGContextSetLineWidth(context, 4.0);
-        CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
+        CGContextSetLineWidth(context, 1);
         
         for (int y = 0; y < self.length; y++){
             for (int x = 0; x < self.length; x++){
@@ -71,8 +70,7 @@
 
 -(UIColor *)calculateColorWithNumber: (int)num
 {
-    CGFloat red = ((255.0f/(CGFloat)self.numColors)*(CGFloat)num)/255.0f;
-    UIColor *color = [UIColor colorWithRed:red green:0.5f blue:0.5f alpha:1];
+    UIColor *color = [[self getColorList] objectAtIndex:num];
     return color;
 }
 
@@ -83,6 +81,23 @@
     //Check bounds?
     
     return index;
+}
+
+- (NSArray *) getColorList
+{
+    if (!self.gameColors){
+        self.gameColors = [[NSMutableArray alloc] init];
+        NSArray *allColors = [[NSArray alloc] initWithObjects:[UIColor redColor], [UIColor greenColor], [UIColor blueColor], [UIColor yellowColor], [UIColor cyanColor], [UIColor orangeColor], [UIColor magentaColor], nil];
+        int remainingColors = self.numColors;
+        while (remainingColors){
+            UIColor *randColor = [allColors objectAtIndex:arc4random() % [allColors count]];
+            if ((! [self.gameColors containsObject:randColor]) && (randColor != nil)){
+                [self.gameColors addObject:randColor];
+                remainingColors--;
+            }
+        }
+    }
+    return self.gameColors;
 }
 
 @end
